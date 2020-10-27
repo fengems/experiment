@@ -1,0 +1,15 @@
+.box-children {
+    margin-left: 30px;
+}
+.hide {
+    display: none;
+}
+
+#id-div-app {
+    font-size: 20px;
+}
+
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+}

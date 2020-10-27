@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test page</title>
+</head>
+<body>
+<button id="id-button">button</button>
+<script>
+    const log = console.log.bind(console)
+
+    const ajax = (method, url, data) => {
+        let r = new XMLHttpRequest()
+        r.open(method, url, true)
+        r.setRequestHeader('Content-Type', 'application/json')
+        r.onload = () => {
+            log('r', r.response)
+        }
+        r.onerror = () => {
+
+        }
+        r.send(data)
+    }
+
+    const fetchTodo = () => {
+        let method = 'GET'
+        // let url = 'http://localhost:5000/api/todos'
+        let url = '/api/todos'
+        let data = ''
+        ajax(method, url, data)
+    }
+
+    const bindEvents = () => {
+        let button = document.querySelector('#id-button')
+        button.addEventListener('click', (event) => {
+            document.body.classList.toggle('gua-pink')
+            // log('pink')
+            // log('html plugin')
+            // log('gua')
+            fetchTodo()
+        })
+    }
+
+    const __main = () => {
+        bindEvents()
+    }
+
+    __main()
+</script>
+</body>
+</html>
