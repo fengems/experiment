@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+      }
+
+      .box {
+        display: flex;
+        width: 200px;
+        height: 100px;
+        border: 1px solid;
+      }
+
+      .box div {
+        width: 200%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 200px;
+      }
+
+      .box > div:nth-child(1) {
+        background: pink;
+      }
+
+      .box > div:nth-child(2) {
+        background: lightblue;
+      }
+
+      .box > div:nth-child(3) {
+        background: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <button id="id-button-left"> < </button>
+        <button id="id-button-right"> > </button>
+      </div>
+    </div>
+    <script>
+      const log = console.log.bind(console)
+
+      const e = (selector) => document.querySelector(selector)
+
+      // 改变图片
+      const onChangeImg = () => {
+        const left = e('#id-button-left')
+        left.addEventListener('click', (event) => {
+          
+        })
+      }
+
+      const __main = () => {
+        onChangeImg()
+      }
+
+      __main()
+    </script>
+  </body>
+</html>
